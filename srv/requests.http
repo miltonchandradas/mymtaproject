@@ -1,0 +1,21 @@
+### Get Users
+GET http://localhost:4004/Users
+
+### Get Projects
+GET http://localhost:4004/Projects
+
+
+### Add User
+POST http://localhost:4004/Users
+Content-Type: application/json
+
+{
+    "name"  : "Jane Doe",
+    "email" : "jane.doe@gmail.com",
+    "phone": "555-555-5555",
+    "gender": "male",
+    "address_street": "8000 Avalon Blvd",
+    "address_city": "Alpharetta",
+    "address_state": "GA",
+    "address_zip": "30004"
+}
