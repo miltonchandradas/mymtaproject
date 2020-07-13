@@ -1,12 +1,12 @@
 ### Get Users
-GET http://localhost:4004/Users
+GET http://localhost:4004/project/Users
 
 ### Get Projects
-GET http://localhost:4004/Projects
+GET http://localhost:4004/project/Projects
 
 
 ### Add User
-POST http://localhost:4004/Users
+POST http://localhost:4004/project/Users
 Content-Type: application/json
 
 {
@@ -14,8 +14,10 @@ Content-Type: application/json
     "email" : "jane.doe@gmail.com",
     "phone": "555-555-5555",
     "gender": "male",
+    "password": "123456",
     "address_street": "8000 Avalon Blvd",
     "address_city": "Alpharetta",
     "address_state": "GA",
-    "address_zip": "30004"
+    "address_zip": "30004",
+    "project_id": "7a68de55-7048-419d-8694-bf340bcccb2e"
 }

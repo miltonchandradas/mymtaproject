@@ -8,8 +8,8 @@ type Address {
 }
 
 type Gender : String enum {
-    male;
-    female;
+    Male;
+    Female;
 }
 
 entity Users {
@@ -18,6 +18,7 @@ entity Users {
         email   : String(100);
         phone   : String(100);
         gender  : Gender;
+        password: String(200);
         address : Address;
         project : Association to Projects;
 }
