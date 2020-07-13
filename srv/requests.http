@@ -13,7 +13,7 @@ Content-Type: application/json
     "name"  : "Jane Doe",
     "email" : "jane.doe@gmail.com",
     "phone": "555-555-5555",
-    "gender": "male",
+    "gender": "Male",
     "password": "123456",
     "address_street": "8000 Avalon Blvd",
     "address_city": "Alpharetta",
