@@ -2,6 +2,11 @@
 GET http://localhost:4004/project/Users
 CustomHeader: abracadabra
 
+### Get Users
+GET http://localhost:5000/project/Users
+CustomHeader: abracadabra
+
+
 ### Get Projects
 GET http://localhost:4004/project/Projects
 

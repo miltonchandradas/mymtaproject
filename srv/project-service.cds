@@ -1,6 +1,6 @@
 using {demo} from '../db/schema';
 
-service ProjectService {
+service ProjectService @(requires: 'authenticated-user') {
 
     entity Users as SELECT from demo.Users;
 

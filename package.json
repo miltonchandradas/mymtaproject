@@ -8,9 +8,12 @@
     "dependencies": {
         "@sap/cds": "^3",
         "@sap/hana-client": "^2.4.177",
+        "@sap/xsenv": "^3.0.0",
+        "@sap/xssec": "^2.2.5",
         "bcryptjs": "^2.4.3",
         "colors": "^1.4.0",
-        "express": "^4"
+        "express": "^4",
+        "passport": "^0.4.1"
     },
     "scripts": {
         "start": "npx cds run"
@@ -19,6 +22,9 @@
         "requires": {
             "db": {
                 "kind": "hana"
+            },
+            "uaa": {
+                "kind": "xsuaa"
             }
         }
     }
