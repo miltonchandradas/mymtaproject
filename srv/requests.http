@@ -1,10 +1,9 @@
 ### Get Users
 GET http://localhost:4004/project/Users
-CustomHeader: abracadabra
 
-### Get Users
-GET http://localhost:5000/project/Users
-CustomHeader: abracadabra
+### Get User
+GET http://localhost:4004/project/Users(8476b626-7001-4ea3-9dab-d2ce43ffb197)
+CustomHeader: 123456
 
 
 ### Get Projects
