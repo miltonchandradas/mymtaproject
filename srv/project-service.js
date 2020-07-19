@@ -8,14 +8,6 @@ module.exports = srv => {
         console.log(`Target: ${req.target.name}`.yellow.inverse);
     });
 
-    srv.before("READ", "Users", async req => {
-        const customHeader = req._.req.headers["customheader"];
-        console.log(customHeader);
-
-        if (customHeader !== "abracadabra") 
-            req.reject(403, "Forbidden...  Secret phrase is incorrect");
-    })
-
     srv.before("CREATE", "Users", async req => {
         console.log("CREATE User...");
         console.log(req.data);
