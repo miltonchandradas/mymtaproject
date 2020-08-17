@@ -72,12 +72,15 @@ module.exports = proc => {
     });
 
 
-    proc.on('getProjectMembers', async (req) => {
+    proc.on('getProjectMembers', async req => {
 
         const {id} = req.data;
-        const results = await proc.run(`SELECT name FROM Users WHERE PROJECT_ID = '${id}'`); 
+        const db = proc.transaction(req);
 
-        return results.map(user => user.name);
+        let {Users} = proc.entities;
+        const results = await db.read(Users).where({PROJECT_ID: id});
+
+        return results.map(user => user.name); 
         
     });
 }
