@@ -24,7 +24,7 @@
                 "kind": "hana"
             },
             "uaa": {
-                "kind": "xsuaa"
+                "kind": "dummy"
             }
         }
     }

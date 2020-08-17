@@ -3,7 +3,13 @@ const bcrypt = require("bcryptjs");
 
 
 module.exports = srv => {
-    srv.before("*", async req => {
+
+    srv.before("*", "Projects", async req => {
+        console.log(`Method: ${req.method}`.yellow.inverse);
+        console.log(`Target: ${req.target.name}`.yellow.inverse);
+    });
+
+    srv.before("*", "Users", async req => {
         console.log(`Method: ${req.method}`.yellow.inverse);
         console.log(`Target: ${req.target.name}`.yellow.inverse);
     });
@@ -54,3 +60,15 @@ module.exports = srv => {
     });
 
 };
+
+
+module.exports = proc => {
+    proc.on('getProjectMembers', async (req) => {
+
+        const {id} = req.data;
+        const results = await proc.run(`SELECT name FROM Users WHERE PROJECT_ID = '${id}'`); 
+
+        return results.map(user => user.name);
+        
+    });
+}

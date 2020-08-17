@@ -8,6 +8,11 @@ CustomHeader: 123456
 
 ### Get Projects
 GET http://localhost:4004/project/Projects
+Authorization: YWxpY2U6
+
+### Get Project Members
+GET http://localhost:4004/project/getProjectMembers(id='7a68de55-7048-419d-8694-bf340bcccb2e')
+
 
 
 ### Add User
