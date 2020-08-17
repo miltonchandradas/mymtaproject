@@ -14,8 +14,8 @@ Authorization: YWxpY2U6
 GET http://localhost:4004/project/getProjectMembers(id='7a68de55-7048-419d-8694-bf340bcccb2e')
 
 
-### Get Today's Date
-GET http://localhost:4004/project/getDate()
+### Get Date
+GET http://localhost:4004/project/getDATE()
 
 
 ### Add User

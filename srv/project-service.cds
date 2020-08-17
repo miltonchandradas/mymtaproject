@@ -6,7 +6,7 @@ service ProjectService {
 
     entity Projects as SELECT from demo.Projects;
 
-    function getDate() returns Date;
+    function getDATE() returns Date;
 
     function getProjectMembers(id: String) returns array of String;
 

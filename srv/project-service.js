@@ -4,15 +4,23 @@ const bcrypt = require("bcryptjs");
 
 
 module.exports = srv => {
+    srv.on("getDATE", () => {
+      return "2018-09-25";
+   });
 
-    srv.before("*", "Projects", async req => {
-        console.log(`Method: ${req.method}`.yellow.inverse);
-        console.log(`Target: ${req.target.name}`.yellow.inverse);
-    });
+   srv.on("getProjectMembers", async (req) => {
+      const { id } = req.data;
+      const db = srv.transaction(req);
 
-    srv.before("*", "Users", async req => {
+      let { Users } = srv.entities;
+      const results = await db.read(Users).where({ PROJECT_ID: id });
+
+      return results.map((user) => user.name);
+   });
+
+    srv.before("*", async req => {
         console.log(`Method: ${req.method}`.yellow.inverse);
-        console.log(`Target: ${req.target.name}`.yellow.inverse);
+        console.log(`Target: ${req.target}`.yellow.inverse);
     });
 
     srv.before("CREATE", "Users", async req => {
@@ -61,26 +69,3 @@ module.exports = srv => {
     });
 
 };
-
-
-module.exports = proc => {
-
-    proc.on('getDate', () => {
-
-        return "2020-07-17";
-        
-    });
-
-
-    proc.on('getProjectMembers', async req => {
-
-        const {id} = req.data;
-        const db = proc.transaction(req);
-
-        let {Users} = proc.entities;
-        const results = await db.read(Users).where({PROJECT_ID: id});
-
-        return results.map(user => user.name); 
-        
-    });
-}
