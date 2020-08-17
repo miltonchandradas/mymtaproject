@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 const colors = require("colors");
 const bcrypt = require("bcryptjs");
 
@@ -63,6 +64,14 @@ module.exports = srv => {
 
 
 module.exports = proc => {
+
+    proc.on('getDate', () => {
+
+        return "2020-07-17";
+        
+    });
+
+
     proc.on('getProjectMembers', async (req) => {
 
         const {id} = req.data;
