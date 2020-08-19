@@ -6,6 +6,15 @@ GET http://localhost:4004/project/Users(8476b626-7001-4ea3-9dab-d2ce43ffb197)
 CustomHeader: 123456
 
 
+### Move user to another project
+POST http://localhost:4004/project/moveUserToAnotherProject
+Content-Type: application/json
+
+{
+    "userId": "aab81d0e-07f4-4922-88bb-215d08093ebe",
+    "projectId": "7ff25e2f-b8a7-4586-9fb6-a1530d0e25ca"
+}
+
 ### Get Projects
 GET http://localhost:4004/project/Projects
 Authorization: YWxpY2U6
